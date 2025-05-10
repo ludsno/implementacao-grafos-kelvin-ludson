@@ -33,6 +33,7 @@ Dijsktra (G = (V, E), vert s, w[]) {
 
 #include <fstream>
 #include <cstring>
+#include <sstream>
 
 using namespace std;
 
@@ -107,7 +108,7 @@ void dijkstra(int n, int s, const vector<vector<pair<int, int>>> &adj, vector<in
         // Relaxar as arestas do vértice u
         for (const auto &edge : adj[u])
         {
-            int v = edge.first; // Vértice vizinho
+            int v = edge.first;  // Vértice vizinho
             int w = edge.second; // Peso da aresta (u, v)
             if (dist[v] > dist[u] + w)
             {
@@ -156,11 +157,15 @@ int main(int argc, char *argv[])
         }
     }
 
-    if (inputFile.empty() || startVertex == -1)
+    // if (inputFile.empty() || startVertex == -1)
+    if (inputFile.empty())
     {
-        cerr << "Erro: parâmetros obrigatórios não fornecidos. Use -h para ajuda.\n";
+        cerr << "Erro: parâmetro -f <arquivo> não fornecido. Use -h para ajuda.\n";
         return 1;
     }
+    // Se não foi informado, assume vértice inicial = 1
+    if (startVertex == -1)
+        startVertex = 1;
 
     // Abrir o arquivo de entrada
     ifstream inFile(inputFile);
@@ -208,6 +213,6 @@ int main(int argc, char *argv[])
 
     if (outFile.is_open())
         outFile.close();
-        
+
     return 0;
 }
