@@ -5,7 +5,7 @@ Pseudocódigo do algoritmo de Dijkstra:
 Dijsktra (G = (V, E), vert s, w[]) {
 
     for v in V:
-        dist[v] = ∞
+        dist[v] = INF
         pre[v] = -1
     dist[s] = 0
 
