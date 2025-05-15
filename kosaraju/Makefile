@@ -1,33 +1,13 @@
-# CXX = g++
-# CXXFLAGS = -Wall -Wextra -std=c++17
-# TARGET = kosaraju
-
-# all: $(TARGET)
-
-# $(TARGET): kosaraju.cpp
-#     $(CXX) $(CXXFLAGS) -o $(TARGET) kosaraju.cpp
-
-# clean:
-#     rm -f $(TARGET)
-
-# help:
-# 	@echo "make            : compila"
-# 	@echo "make clean      : remove binários"
-
-# .PHONY: all clean help
-
-
-
 # Nome do compilador e flags comuns
-CXX       := g++
+CXX       := g++ 
 CXXFLAGS  := -Wall -Wextra -std=c++17 -O2
 
 # Nome do binário (altere conforme a pasta: dijkstra, kosaraju, prim, kruskal, bellman)
-TARGET    := kosaraju
+TARGET    := kosaraju.bin
 
 # Fonte e objeto
-SRC       := $(TARGET).cpp
-OBJ       := $(TARGET).o
+SRC       := kosaraju.cpp
+OBJ       := kosaraju.o
 
 .PHONY: all clean help
 

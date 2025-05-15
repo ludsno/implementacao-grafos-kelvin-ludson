@@ -207,7 +207,8 @@ int main(int argc, char *argv[])
     // Exibir as distâncias
     for (int i = 0; i < n; ++i)
     {
-        out << i + 1 << ":" << (dist[i] == INF ? -1 : dist[i]) << " ";
+        out << i + 1 << ":" << (dist[i] == INF ? -1 : dist[i]);
+        if (i != n - 1) out << " ";
     }
     out << "\n";
 

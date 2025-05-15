@@ -124,15 +124,16 @@ int main(int argc, char *argv[])
     }
 
     int n, m;
-    cin >> n >> m;
+    inFile >> n >> m;
     vector<vector<int>> adj(n);
 
     for (int i = 0; i < m; ++i)
     {
         int u, v;
-        cin >> u >> v;
+        inFile >> u >> v;
         adj[u - 1].push_back(v - 1); // Ajustar para índices baseados em 0
     }
+    inFile.close();
 
     vector<vector<int>> scc = kosaraju(n, adj);
 

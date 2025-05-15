@@ -1,33 +1,13 @@
-# CXX = g++
-# CXXFLAGS = -Wall -Wextra -std=c++17
-# TARGET = dijkstra
-
-# all: $(TARGET)
-
-# $(TARGET): dijkstra.cpp
-#     $(CXX) $(CXXFLAGS) -o $(TARGET) dijkstra.cpp
-
-# clean:
-#     rm -f $(TARGET)
-
-# help:
-# 	@echo "make            : compila"
-# 	@echo "make clean      : remove binários"
-
-# .PHONY: all clean help
-
-
-
 # Nome do compilador e flags comuns
 CXX       := g++
 CXXFLAGS  := -Wall -Wextra -std=c++17 -O2
 
 # Nome do binário (altere conforme a pasta: dijkstra, kosaraju, prim, kruskal, bellman)
-TARGET    := dijkstra
+TARGET    := dijkstra.bin
 
 # Fonte e objeto
-SRC       := $(TARGET).cpp
-OBJ       := $(TARGET).o
+SRC       := dijkstra.cpp
+OBJ       := dijkstra.o
 
 .PHONY: all clean help
 
