@@ -2,62 +2,34 @@
 
 Repositório com a implementação de algoritmos de Teoria dos Grafos, CC, UFAL, 2025.
 
+# Comandos do Makefile
+- Criar executável .bin
+
+```cpp
+make
+```
+- Como usar e exemplo de funcionamento
+
+```cpp
+make example
+```
+- Remover executável
+```cpp
+make clean
+```
 
 # Dijkstra
 
-- criar executável
-
-```cpp
-make
-```
-
-- como usar e exemplo de funcionamento
-
-```cpp
-make example
-```
-
-- remover executável
-```cpp
-make clean
-```
-
+Algoritmo para o problema do caminho mínimo em grafos.
 
 #  Kosaraju
 
-- criar executável
-
-```cpp
-make
-```
-
-- como usar e exemplo de funcionamento
-
-```cpp
-make example
-```
-
-- remover executável
-```cpp
-make clean
-```
-
+Algoritmo para o problema de componentes fortemente conexos.
 
 # Kruskal
 
-- criar executável
+Algoritmo para o problema da Árvore Geradora Mínima.
 
-```cpp
-make
-```
+# Prim
 
-- como usar e exemplo de funcionamento
-
-```cpp
-make example
-```
-
-- remover executável
-```cpp
-make clean
-```
+Algoritmo para o problema da Árvore Geradora Mínima.
