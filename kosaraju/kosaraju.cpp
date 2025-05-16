@@ -137,7 +137,6 @@ int main(int argc, char *argv[])
 
     vector<vector<int>> scc = kosaraju(n, adj);
 
-    cout << "Componentes fortemente conexas:\n";
     for (const auto &component : scc)
     {
         for (int v : component)

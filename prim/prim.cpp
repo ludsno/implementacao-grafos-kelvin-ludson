@@ -57,7 +57,7 @@ int prim (int numberofVertex, vector<vector<Edge>>& adjacencyList, int startVert
 
                 if (!visited[edgeEnd] && edgeWeight < minimumCost[edgeEnd]) {
                     minimumCost[edgeEnd] = edgeWeight;
-                    parent[edgeEnd] = edgeWeight;
+                    parent[edgeEnd] = vertex;
                     pq.push({edgeEnd, edgeWeight});
                 }
             }
