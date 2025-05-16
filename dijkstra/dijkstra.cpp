@@ -184,6 +184,7 @@ int main(int argc, char *argv[])
         int u, v, w;
         inFile >> u >> v >> w;
         adj[u - 1].emplace_back(v - 1, w); // Ajustar para índices baseados em 0
+        adj[v - 1].emplace_back(u - 1, w); // Adiciona aresta reversa para grafo não direcionado
     }
     inFile.close();
 
