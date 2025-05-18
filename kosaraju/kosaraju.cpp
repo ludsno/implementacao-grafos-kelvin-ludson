@@ -80,7 +80,7 @@ vector<vector<int>> kosaraju(int n, const vector<vector<int>> &adj)
 // Função para exibir o help
 void showHelp()
 {
-    cout << "Uso: ./kosaraju -f <arquivo> -i <vertice> [-o <arquivo>] [-h]\n";
+    cout << "Uso: ./kosaraju -f <arquivo> [-o <arquivo>] [-h]\n";
     cout << "-h : mostra esta mensagem de ajuda\n";
     cout << "-f <arquivo> : indica o arquivo que contém o grafo de entrada\n";
     cout << "-o <arquivo> : redireciona a saída para o arquivo especificado\n";
@@ -88,7 +88,6 @@ void showHelp()
 
 int main(int argc, char *argv[])
 {
-
     string inputFile, outputFile;
 
     // Processar os argumentos da linha de comando
@@ -135,15 +134,27 @@ int main(int argc, char *argv[])
     }
     inFile.close();
 
+    // Configurar saída com redirecionamento opcional
+    ostream *out = &cout;
+    ofstream fout;
+    if (!outputFile.empty()) {
+        fout.open(outputFile);
+        if (!fout) {
+            cerr << "Erro: não foi possível abrir o arquivo de saída.\n";
+            return 1;
+        }
+        out = &fout;
+    }
+
     vector<vector<int>> scc = kosaraju(n, adj);
 
     for (const auto &component : scc)
     {
         for (int v : component)
         {
-            cout << v + 1 << " "; // Ajustar para índices baseados em 1
+            *out << v + 1 << " "; // Ajustar para índices baseados em 1
         }
-        cout << "\n";
+        *out << "\n";
     }
 
     return 0;

@@ -17,9 +17,9 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Regra de compilação de .cpp para .o
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# # Regra de compilação de .cpp para .o
+# %.o: %.cpp
+# 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(TARGET) $(OBJ)

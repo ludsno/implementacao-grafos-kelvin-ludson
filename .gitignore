@@ -1,1 +1,15 @@
+# Ignorar arquivos binários e objetos
+*.bin
+*.o
+
+# Ignorar arquivos de saída gerados
+out.txt
+solucao.txt
+custo.txt
+
+# Ignorar outros arquivos temporários
+*.log
+*.tmp
+
+# Manter regra existente
 Bat1/
