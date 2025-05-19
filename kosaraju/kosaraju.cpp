@@ -77,7 +77,6 @@ vector<vector<int>> kosaraju(int n, const vector<vector<int>> &adj)
     return scc;
 }
 
-// Função para exibir o help
 void showHelp()
 {
     cout << "Uso: ./kosaraju -f <arquivo> [-o <arquivo>] [-h]\n";
@@ -90,7 +89,6 @@ int main(int argc, char *argv[])
 {
     string inputFile, outputFile;
 
-    // Processar os argumentos da linha de comando
     for (int i = 1; i < argc; ++i)
     {
         if (strcmp(argv[i], "-h") == 0)
@@ -114,7 +112,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Abrir o arquivo de entrada
     ifstream inFile(inputFile);
     if (!inFile)
     {
@@ -130,11 +127,10 @@ int main(int argc, char *argv[])
     {
         int u, v;
         inFile >> u >> v;
-        adj[u - 1].push_back(v - 1); // Ajustar para índices baseados em 0
+        adj[u - 1].push_back(v - 1);
     }
     inFile.close();
 
-    // Configurar saída com redirecionamento opcional
     ostream *out = &cout;
     ofstream fout;
     if (!outputFile.empty()) {
@@ -152,7 +148,7 @@ int main(int argc, char *argv[])
     {
         for (int v : component)
         {
-            *out << v + 1 << " "; // Ajustar para índices baseados em 1
+            *out << v + 1 << " ";
         }
         *out << "\n";
     }

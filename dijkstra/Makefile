@@ -1,31 +1,20 @@
-# Nome do compilador e flags comuns
-CXX       := g++
-CXXFLAGS  := -Wall -Wextra -std=c++17 -O2
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 
-# Nome do binário (altere conforme a pasta: dijkstra, kosaraju, prim, kruskal, bellman)
-TARGET    := dijkstra.bin
+TARGET = dijkstra.bin
 
-# Fonte e objeto
-SRC       := dijkstra.cpp
-OBJ       := dijkstra.o
+SRC = dijkstra.cpp
 
 .PHONY: all clean help
 
-all: $(TARGET)
-
-# Regra de link edição de objeto para binário
-$(TARGET): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
-# Regra de compilação de .cpp para .o
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+all:
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
 clean:
-	@rm -f $(TARGET) $(OBJ)
+	rm -f $(TARGET)
 
 help:
-	@echo "Uso do Makefile em $(TARGET)/"
-	@echo "  make         : compila o binário '$(TARGET)'"
-	@echo "  make clean   : remove binário e objetos"
-	@echo "  make help    : esta mensagem"
+	@echo "Uso: make [all|clean|help]"
+	@echo "  make       : compila '$(TARGET)'"
+	@echo "  make clean : remove o binário"
+	@echo "  make help  : esta mensagem"

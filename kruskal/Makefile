@@ -1,24 +1,25 @@
-# Nome do executável
 TARGET = kruskal.bin
 
-# Compilador
 CXX = g++
 
-# Flags de compilação
-CXXFLAGS = -std=c++11 -Wall -Wextra -O2
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 
-# Arquivos fonte
 SRC = kruskal.cpp
 
-# Regra padrão
-all: $(TARGET)
+.PHONY: all clean example help
 
-$(TARGET): $(SRC)
+all:
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
-# Limpeza dos arquivos gerados
 clean:
 	rm -f $(TARGET)
+
+help:
+	@echo "Uso: make [all|clean|example|help]"
+	@echo "  make         : compila '$(TARGET)'"
+	@echo "  make clean   : remove o binário"
+	@echo "  make example : mostra exemplo de uso"
+	@echo "  make help    : esta mensagem"
 
 example:
 	@echo ""

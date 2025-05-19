@@ -1,15 +1,25 @@
-# Ignorar arquivos binários e objetos
+# Arquivos binários e executáveis
 *.bin
-*.o
+*.exe
 
-# Ignorar arquivos de saída gerados
-out.txt
-solucao.txt
-custo.txt
+# Arquivos de pacotes e compactados
+*.zip
 
-# Ignorar outros arquivos temporários
+# Logs e arquivos temporários
 *.log
 *.tmp
 
-# Manter regra existente
+# Objetos de compilação
+*.o
+*.obj
+
+# IDE e editores
+.vscode/
+
+# Arquivos do sistema operacional
+Thumbs.db
+desktop.ini
+
+# Pastas e arquivos auxiliares
 Bat1/
+myaux.txt
