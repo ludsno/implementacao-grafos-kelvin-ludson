@@ -20,7 +20,7 @@ make clean
 
 # Dijkstra
 
-Algoritmo para o problema do caminho mínimo em grafos.
+Algoritmo para o problema do caminho mínimo em grafos a partir de um vértice inicial.
 
 #  Kosaraju
 
@@ -33,3 +33,7 @@ Algoritmo para o problema da Árvore Geradora Mínima.
 # Prim
 
 Algoritmo para o problema da Árvore Geradora Mínima.
+
+# Floyd-Warshall
+
+Algoritmo para o problema do caminho mínimo entre todos os vértices.
