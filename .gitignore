@@ -1,5 +1,4 @@
 # Arquivos binários e executáveis
-*.bin
 *.exe
 
 # Arquivos de pacotes e compactados
@@ -21,5 +20,4 @@ Thumbs.db
 desktop.ini
 
 # Pastas e arquivos auxiliares
-Bat1/
 myaux.txt

@@ -1,18 +1,3 @@
-/*
-
-    floyd_warshall(w) {
-        dist^0 = w;
-        for (k = 1 -> n) {
-            for (i = 1 -> n) {
-                for (j = 1 -> n) {
-                    dist^k[i][j] = min(dist^(k-1)[i][j], dist^(k-1)[i][k] + dist^(k-1)[k][j]);
-                }
-            }
-        }
-    }
-
-*/
-
 #include <iostream>
 #include <vector>
 #include <limits>
@@ -44,9 +29,9 @@ void floydWarshall(int n, vector<vector<long long>> &dist)
     }
 }
 
-void printHelp(const char *prog)
+void printHelp()
 {
-    cout << "Uso: " << prog << " -f <arquivo> [-o <arquivo>] [-h]\n";
+    cout << "Uso: ./floyd_warshall -f <arquivo> [-o <arquivo>] [-h]\n";
     cout << " -f <arquivo> : arquivo de entrada contendo o grafo\n";
     cout << " -o <arquivo> : (opcional) arquivo de saída\n";
     cout << " -h           : mostra esta mensagem de ajuda\n";
@@ -59,7 +44,7 @@ int main(int argc, char *argv[])
     {
         if (strcmp(argv[i], "-h") == 0)
         {
-            printHelp(argv[0]);
+            printHelp();
             return 0;
         }
         else if (strcmp(argv[i], "-f") == 0 && i + 1 < argc)
